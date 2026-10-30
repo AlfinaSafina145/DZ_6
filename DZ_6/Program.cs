@@ -82,15 +82,12 @@ namespace FitnessApp
     }
     public class StrengthWorkout : Workout
     {
-        public StrengthWorkout(string name, int duration, double calories, int difficultyLevel)
-            : base(name, duration, calories, difficultyLevel)
+        public StrengthWorkout(string name, int duration, double calories, int difficultyLevel) : base(name, duration, calories, difficultyLevel)
         {
         }
-        public StrengthWorkout(string name, int duration)
-            : base(name, duration, 300, 8)
+        public StrengthWorkout(string name, int duration) : base(name, duration, 300, 8)
         {
         }
-
         public override void GetRecommendations()
         {
             Console.WriteLine($"[Рекомендация] Для силовой '{Name}' обязательно делайте разминку суставов и отдыхайте 2 минуты между подходами.");
@@ -98,15 +95,12 @@ namespace FitnessApp
     }
     public class StretchingWorkout : Workout
     {
-        public StretchingWorkout(string name, int duration, double calories, int difficultyLevel)
-            : base(name, duration, calories, difficultyLevel)
+        public StretchingWorkout(string name, int duration, double calories, int difficultyLevel) : base(name, duration, calories, difficultyLevel)
         {
         }
-        public StretchingWorkout()
-            : base("Йога для начинающих", 30, 100, 2)
+        public StretchingWorkout() : base("Йога для начинающих", 30, 100, 2)
         {
         }
-
         public override void GetRecommendations()
         {
             Console.WriteLine($"[Рекомендация] В растяжке '{Name}' главное - плавность. Не делайте резких движений и дышите глубоко.");
