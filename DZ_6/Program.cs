@@ -101,10 +101,7 @@ namespace BankApp
 
                 Console.WriteLine("\nПытаемся снять 5000 руб (больше, чем есть):");
                 myAccount.Withdraw(5000m);
-
                 myAccount.PrintInfo();
-
-
             }
         }
     }
