@@ -8,14 +8,26 @@ namespace BankApp
     }
     public class BankAccount
     {
+        private static int lastAccountNumber = 0;
+        private static int GenerateAccountNumber()
+        {
+            lastAccountNumber++;
+            return lastAccountNumber;
+        }
         private string account_number;
         private decimal balance;
         private AccountType type;
+        public BankAccount(decimal initialBalance, AccountType accType)
+        {
+            account_number = GenerateAccountNumber().ToString();
+
+            Balance = initialBalance;
+            Type = accType;
+        }
 
         public string AccountNumber
         {
             get { return account_number; }
-            set { account_number = value;}
         }
         public decimal Balance
         {
@@ -44,13 +56,17 @@ namespace BankApp
         {
             static void Main(string[] args)
             {
-                BankAccount account = new BankAccount();
+                Console.WriteLine("Создаем первый счет:");
+                BankAccount acc1 = new BankAccount(1000m, AccountType.Savings);
+                acc1.PrintInfo();
 
-                account.AccountNumber = "1234567890000";
-                account.Balance = 2345.05m;
-                account.Type = AccountType.Savings;
+                Console.WriteLine("\nСоздаем второй счет:");
+                BankAccount acc2 = new BankAccount(5000m, AccountType.Current);
+                acc2.PrintInfo();
 
-                account.PrintInfo();
+                Console.WriteLine("\nСоздаем третий счет:");
+                BankAccount acc3 = new BankAccount(0m, AccountType.Savings);
+                acc3.PrintInfo();
 
 
             }
