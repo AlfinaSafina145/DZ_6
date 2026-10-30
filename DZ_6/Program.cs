@@ -64,12 +64,10 @@ namespace FitnessApp
     }
     public class CardioWorkout : Workout
     {
-        public CardioWorkout(string name, int duration, double calories, int difficultyLevel)
-            : base(name, duration, calories, difficultyLevel)
+        public CardioWorkout(string name, int duration, double calories, int difficultyLevel) : base(name, duration, calories, difficultyLevel)
         {
         }
-        public CardioWorkout(int duration, double calories)
-            : base("Бег на дорожке", duration, calories, 5)
+        public CardioWorkout(int duration, double calories) : base("Бег на дорожке", duration, calories, 5)
         {
         }
         public override void GetRecommendations()
